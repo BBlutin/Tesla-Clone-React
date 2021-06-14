@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Fade from "react-reveal/Fade";
 
 function Section({
   title,
@@ -12,19 +13,23 @@ function Section({
 }) {
   return (
     <Wrap bgImage={backgroundImg}>
-      <ItemText>
-        <h1>{title}</h1>
-        {isLink === "true" ? (
-          <SubLink>{description}</SubLink>
-        ) : (
-          <SubText>{description}</SubText>
-        )}
-      </ItemText>
+      <Fade bottom>
+        <ItemText>
+          <h1>{title}</h1>
+          {isLink === "true" ? (
+            <SubLink>{description}</SubLink>
+          ) : (
+            <SubText>{description}</SubText>
+          )}
+        </ItemText>
+      </Fade>
       <Buttons>
-        <ButtonGroup>
-          <LeftButton>{leftBtn}</LeftButton>
-          {rightBtn && <RightButton>{rightBtn}</RightButton>}
-        </ButtonGroup>
+        <Fade bottom>
+          <ButtonGroup>
+            <LeftButton>{leftBtn}</LeftButton>
+            {rightBtn && <RightButton>{rightBtn}</RightButton>}
+          </ButtonGroup>
+        </Fade>
         {isFirst && <DownArrow src="/images/down-arrow.svg" />}
       </Buttons>
     </Wrap>
@@ -59,6 +64,10 @@ const SubText = styled.p``;
 const SubLink = styled.p`
   text-decoration: underline;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    font-weight: 600;
+  }
 `;
 
 const Buttons = styled.div``;
