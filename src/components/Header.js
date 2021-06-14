@@ -8,18 +8,16 @@ function Header() {
 
   return (
     <Container>
-      <a>
-        <img src="/images/logo.svg" />
-      </a>
+      <img src="/images/logo.svg" />
       <LeftMenu>
-        <a href="#">Model S</a>
-        <a href="#">Model 3</a>
-        <a href="#">Model X</a>
-        <a href="#">Model Y</a>
+        <p>Model S</p>
+        <p>Model 3</p>
+        <p>Model X</p>
+        <p>Model Y</p>
       </LeftMenu>
       <RightMenu>
-        <a href="#">Shop</a>
-        <a href="#">Compte</a>
+        <p>Shop</p>
+        <p>Compte</p>
         <CustomMenu onClick={() => setBurgerStatus(true)} />
       </RightMenu>
       <BurgerNav show={burgerStatus}>
@@ -27,52 +25,52 @@ function Header() {
           <CustomClose onClick={() => setBurgerStatus(false)} />
         </CloseWrapper>
         <CarItem>
-          <a href="#">Modèle S</a>
+          <p>Modèle S</p>
         </CarItem>
         <CarItem>
-          <a href="#">Modèle 3</a>
+          <p>Modèle 3</p>
         </CarItem>
         <CarItem>
-          <a href="#">Modèle X</a>
+          <p>Modèle X</p>
         </CarItem>
         <CarItem>
-          <a href="#">Modèle Y</a>
+          <p>Modèle Y</p>
         </CarItem>
         <li>
-          <a href="#">Véhicules Disponnibles</a>
+          <p>Véhicules Disponnibles</p>
         </li>
         <li>
-          <a href="#">Véhicules D'occasion</a>
+          <p>Véhicules D'occasion</p>
         </li>
         <li>
-          <a href="#">Reprise</a>
+          <p>Reprise</p>
         </li>
         <li>
-          <a href="#">Flottes et Entreprises</a>
+          <p>Flottes et Entreprises</p>
         </li>
         <li>
-          <a href="#">Cybertruck</a>
+          <p>Cybertruck</p>
         </li>
         <li>
-          <a href="#">Roadster</a>
+          <p>Roadster</p>
         </li>
         <li>
-          <a href="#">Electricité pour les professionnels</a>
+          <p>Electricité pour les professionnels</p>
         </li>
         <li>
-          <a href="#">Industries</a>
+          <p>Industries</p>
         </li>
         <li>
-          <a href="#">Energie</a>
+          <p>Energie</p>
         </li>
         <li>
-          <a href="#">Nous trouver</a>
+          <p>Nous trouver</p>
         </li>
         <li>
-          <a href="#">Evènements</a>
+          <p>Evènements</p>
         </li>
         <li>
-          <a href="#">Assistance</a>
+          <p>Assistance</p>
         </li>
       </BurgerNav>
     </Container>
@@ -106,11 +104,12 @@ const LeftMenu = styled.div`
   justify-content: center;
   flex-grow: 1;
 
-  a {
+  p {
     font-weight: 600;
     text-transform: uppercase;
     padding: 0 20px;
     flex-wrap: no-wrap;
+    cursor: pointer;
   }
   @media (max-width: 800px) {
     display: none;
@@ -121,10 +120,11 @@ const RightMenu = styled.div`
   margin-right: 5px;
   display: flex;
   align-items: center;
-  a {
+  p {
     font-weight: 600;
     text-transform: uppercase;
     padding: 0 20px;
+    cursor: pointer;
   }
 `;
 
@@ -152,9 +152,10 @@ const BurgerNav = styled.div`
   li {
     padding: 15px 0;
 
-    a {
+    p {
       font-weight: 600;
       white-space: nowrap;
+      cursor: pointer;
     }
   }
 `;
